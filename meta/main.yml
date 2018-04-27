@@ -1,6 +1,6 @@
 dependencies:
+  - role: victorock.ipa
   - role: victorock.ipaconf
-  - role: victorock.krb5
 
 galaxy_info:
   author: Florence Blanc-Renaud, Thomas Woerner, Victor da Costa
