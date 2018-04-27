@@ -142,6 +142,7 @@
   - name: Install - Configure IPA default.conf
     include_role:
       name: ipaconf
+      tasks_from: run
     vars:
       ipaconf_server: "{{ ipadiscovery.servers[0] }}"
       ipaconf_domain: "{{ ipadiscovery.domain }}"
