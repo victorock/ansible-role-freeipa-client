@@ -142,7 +142,7 @@
   - name: Install - Configure IPA default.conf
     include_role:
       name: victorock.ipaconf
-      tasks_from: run
+      tasks_from: ipa
     vars:
       ipaconf_server: "{{ ipadiscovery.servers[0] }}"
       ipaconf_domain: "{{ ipadiscovery.domain }}"
@@ -167,8 +167,8 @@
 
   - name: Install - Configure krb5 for IPA realm "{{ ipadiscovery.realm }} <= 4.4"
     include_role:
-      name: krb5
-      tasks_from: run
+      name: victorock.ipaconf
+      tasks_from: krb5
     vars:
       krb5_servers: "{{ [ ] if ipadiscovery.dnsok else ipadiscovery.servers }}"
       krb5_realm: "{{ ipadiscovery.realm }}"
@@ -180,8 +180,8 @@
 
   - name: Install - Configure krb5 for IPA realm "{{ ipadiscovery.realm }} > 4.4"
     include_role:
-      name: krb5
-      tasks_from: run
+      name: victorock.ipaconf
+      tasks_from: krb5
     vars:
       krb5_servers: "{{ [ ] if ipadiscovery.dnsok else ipadiscovery.servers }}"
       krb5_realm: "{{ ipadiscovery.realm }}"
