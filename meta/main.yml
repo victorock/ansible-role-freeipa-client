@@ -1,21 +1,26 @@
+---
 dependencies:
   - role: victorock.ipa
   - role: victorock.ipaconf
 
 galaxy_info:
   author: Florence Blanc-Renaud, Thomas Woerner, Victor da Costa
-  description: A role to join a machine to an IPA domain
+  description: Role to setup IPA Client
   company: Red Hat, Inc
   license: GPLv3
-  min_ansible_version: 2.3.1
+  min_ansible_version: 2.4
   platforms:
     - name: Fedora
       versions:
         - 25
-    - name: rhel
+        - 26
+        - 27
+    - name: EL
       versions:
         - 7
-
+        - 7.3
+        - 7.4
+        - 7.5
   galaxy_tags:
     - identity
     - ipa
